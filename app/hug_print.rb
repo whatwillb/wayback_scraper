@@ -41,5 +41,5 @@ class Confession
 end
 
 
-test = Confession.from_html("http://web.archive.org/web/20071025014638/http://grouphug.us/")
+test = Confession.from_html("http://web.archive.org/web/20061119120435/http://grouphug.us/page/12/n")
 test.print_from_table(test.raw_confession)
