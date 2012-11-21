@@ -1,6 +1,7 @@
 require 'rake'
 require 'rspec/core/rake_task'
 require_relative 'db/config'
+require_relative 'lib/confession_importer'
 # require_relative 'lib/students_importer'
 
 
@@ -23,10 +24,10 @@ task "db:migrate" do
   end
 end
 
-# desc "populate the test database with sample data"
-# task "db:populate" do
-#   StudentsImporter.import
-# end
+desc "populate the test database with sample data"
+task "db:populate" do
+  ConfessionsImporter.import("http://web.archive.org/web/20060306154841/http://grouphug.us/")
+end
 
 desc 'Retrieves the current schema version number'
 task "db:version" do
