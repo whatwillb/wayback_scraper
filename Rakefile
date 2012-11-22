@@ -1,8 +1,8 @@
 require 'rake'
 require 'rspec/core/rake_task'
 require_relative 'db/config'
-require_relative 'lib/confession_importer'
-# require_relative 'lib/students_importer'
+require_relative 'app/models/confession'
+
 
 
 desc "create the database"
@@ -26,8 +26,7 @@ end
 
 desc "populate the test database with sample data"
 task "db:populate" do
-  #Confession.save_confessions_from_url("http://web.archive.org/web/20060306154841/http://grouphug.us/")
-  ConfessionsImporter.import("http://web.archive.org/web/20060306154841/http://grouphug.us/")
+   Confession.import("http://web.archive.org/web/20060306154841/http://grouphug.us/",40)
 end
 
 desc 'Retrieves the current schema version number'
