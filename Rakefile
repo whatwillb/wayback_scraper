@@ -26,6 +26,7 @@ end
 
 desc "populate the test database with sample data"
 task "db:populate" do
+  #Confession.save_confessions_from_url("http://web.archive.org/web/20060306154841/http://grouphug.us/")
   ConfessionsImporter.import("http://web.archive.org/web/20060306154841/http://grouphug.us/")
 end
 
